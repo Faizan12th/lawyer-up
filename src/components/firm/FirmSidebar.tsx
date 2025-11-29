@@ -25,7 +25,7 @@ export function FirmSidebar() {
     ];
 
     return (
-        <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-screen sticky top-0">
+        <aside className="w-64 bg-white border-r border-gray-200 flex flex-col h-screen">
             <div className="p-6 border-b border-gray-100">
                 <Link href="/firm/dashboard" className="flex items-center gap-2">
                     <Building2 className="h-8 w-8 text-gray-900" />
@@ -44,8 +44,8 @@ export function FirmSidebar() {
                             key={item.href}
                             href={item.href}
                             className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive
-                                    ? 'bg-gray-900 text-white'
-                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                ? 'bg-gray-900 text-white'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                 }`}
                         >
                             <item.icon className={`h-5 w-5 ${isActive ? 'text-white' : 'text-gray-500'}`} />

@@ -33,7 +33,7 @@ export function ClientSidebar() {
     ];
 
     return (
-        <div className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col fixed left-0 top-0">
+        <div className="w-64 bg-white border-r border-gray-200 h-screen flex flex-col">
             <div className="p-6 border-b border-gray-100">
                 <Link href="/" className="flex items-center gap-2">
                     <Scale className="h-8 w-8 text-gray-900" />
@@ -50,8 +50,8 @@ export function ClientSidebar() {
                         key={item.href}
                         href={item.href}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${isActive(item.href)
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            ? 'bg-gray-900 text-white'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                             }`}
                     >
                         <item.icon className={`h-5 w-5 ${isActive(item.href) ? 'text-white' : 'text-gray-500'}`} />
