@@ -193,9 +193,7 @@ export default function LawyerProfilePage() {
                                 <Button onClick={() => setBookingOpen(true)} className="bg-gray-900 hover:bg-gray-800 text-white">
                                     Book Appointment
                                 </Button>
-                                <Button variant="outline" className="border-gray-300">
-                                    Message
-                                </Button>
+
                             </div>
                         </div>
                     </div>
@@ -275,6 +273,7 @@ export default function LawyerProfilePage() {
                                     required
                                     className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
                                     value={bookingData.date}
+                                    min={new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Karachi' })}
                                     onChange={(e) => setBookingData({ ...bookingData, date: e.target.value })}
                                 />
                             </div>

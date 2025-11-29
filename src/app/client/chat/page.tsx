@@ -152,13 +152,6 @@ export default function ClientChatPage() {
             {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
-                <div className="flex items-center gap-2 mb-2">
-                    <Link href="/client/dashboard" className="text-muted-foreground hover:text-foreground">
-                        <ArrowLeft className="h-4 w-4" />
-                    </Link>
-                    <h2 className="text-xl font-semibold">Chat & Consultation</h2>
-                </div>
-                <p className="text-sm text-muted-foreground -mt-4 mb-6 ml-6">Communicate with your lawyer</p>
 
                 <div className="grid gap-6 lg:grid-cols-3 h-[600px]">
                     {/* Chat History Sidebar */}

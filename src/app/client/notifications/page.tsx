@@ -126,9 +126,9 @@ export default function ClientNotificationsPage() {
                     </Button>
                 </div>
 
-                <div className="grid gap-6 lg:grid-cols-3">
+                <div className="w-full">
                     {/* Notifications List */}
-                    <div className="lg:col-span-2 space-y-4">
+                    <div className="space-y-4">
                         <Card className="p-6">
                             <div className="mb-6">
                                 <h3 className="font-semibold">Recent Notifications</h3>
@@ -164,84 +164,6 @@ export default function ClientNotificationsPage() {
                                         );
                                     })
                                 )}
-                            </div>
-                        </Card>
-                    </div>
-
-                    {/* Notification Settings */}
-                    <div className="lg:col-span-1">
-                        <Card className="p-6 sticky top-6">
-                            <div className="mb-6">
-                                <h3 className="font-semibold">Notification Settings</h3>
-                                <p className="text-sm text-muted-foreground">Manage how you receive notifications</p>
-                            </div>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-sm font-medium text-gray-900 mb-3">Notification Channels</h4>
-                                    <div className="space-y-3">
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-700">Email Notifications</p>
-                                                <p className="text-xs text-muted-foreground">Receive updates via email</p>
-                                            </div>
-                                            <label className="relative inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" checked={emailNotif} onChange={() => setEmailNotif(!emailNotif)} className="sr-only peer" />
-                                                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-900"></div>
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-700">SMS Notifications</p>
-                                                <p className="text-xs text-muted-foreground">Receive updates via SMS</p>
-                                            </div>
-                                            <label className="relative inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" checked={smsNotif} onChange={() => setSmsNotif(!smsNotif)} className="sr-only peer" />
-                                                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-900"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="border-t border-gray-100 pt-4">
-                                    <h4 className="text-sm font-medium text-gray-900 mb-3">Notification Types</h4>
-                                    <div className="space-y-3">
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-700">Appointment Reminders</p>
-                                                <p className="text-xs text-muted-foreground">Upcoming appointment alerts</p>
-                                            </div>
-                                            <label className="relative inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" checked={apptReminders} onChange={() => setApptReminders(!apptReminders)} className="sr-only peer" />
-                                                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-900"></div>
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-700">Payment Updates</p>
-                                                <p className="text-xs text-muted-foreground">Payment confirmations and reminders</p>
-                                            </div>
-                                            <label className="relative inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" checked={paymentUpdates} onChange={() => setPaymentUpdates(!paymentUpdates)} className="sr-only peer" />
-                                                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-900"></div>
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <p className="text-sm font-medium text-gray-700">Chat Messages</p>
-                                                <p className="text-xs text-muted-foreground">New messages from lawyers</p>
-                                            </div>
-                                            <label className="relative inline-flex items-center cursor-pointer">
-                                                <input type="checkbox" checked={chatMessages} onChange={() => setChatMessages(!chatMessages)} className="sr-only peer" />
-                                                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gray-900"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">
-                                    Save Preferences
-                                </Button>
                             </div>
                         </Card>
                     </div>

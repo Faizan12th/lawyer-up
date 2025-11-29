@@ -100,60 +100,9 @@ export default function AppointmentsPage() {
                     ))}
                 </div>
 
-                <div className="grid gap-6 lg:grid-cols-3">
-                    {/* Calendar Section */}
-                    <div className="lg:col-span-1">
-                        <Card className="p-6 h-full">
-                            <div className="mb-6">
-                                <h3 className="text-lg font-semibold">Calendar</h3>
-                                <p className="text-sm text-muted-foreground">View your schedule</p>
-                            </div>
-
-                            <div className="border rounded-lg p-4">
-                                <div className="flex items-center justify-between mb-4">
-                                    <button className="p-1 hover:bg-gray-100 rounded-full">
-                                        <ChevronLeft className="h-4 w-4" />
-                                    </button>
-                                    <span className="font-semibold">October 2025</span>
-                                    <button className="p-1 hover:bg-gray-100 rounded-full">
-                                        <ChevronRight className="h-4 w-4" />
-                                    </button>
-                                </div>
-
-                                <div className="grid grid-cols-7 text-center text-xs mb-2 text-muted-foreground">
-                                    <div>Su</div>
-                                    <div>Mo</div>
-                                    <div>Tu</div>
-                                    <div>We</div>
-                                    <div>Th</div>
-                                    <div>Fr</div>
-                                    <div>Sa</div>
-                                </div>
-
-                                <div className="grid grid-cols-7 text-center text-sm gap-y-4">
-                                    {/* Calendar days would go here - simplified for now */}
-                                    <div className="text-muted-foreground">28</div>
-                                    <div className="text-muted-foreground">29</div>
-                                    <div className="text-muted-foreground">30</div>
-                                    <div>1</div>
-                                    <div>2</div>
-                                    <div>3</div>
-                                    <div>4</div>
-                                    <div>5</div>
-                                    <div>6</div>
-                                    <div>7</div>
-                                    <div>8</div>
-                                    <div>9</div>
-                                    <div>10</div>
-                                    <div className="bg-gray-900 text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto">11</div>
-                                    {/* ... rest of calendar ... */}
-                                </div>
-                            </div>
-                        </Card>
-                    </div>
-
+                <div className="w-full">
                     {/* Appointments List Section */}
-                    <div className="lg:col-span-2">
+                    <div className="space-y-4">
                         <Card className="p-6 h-full">
                             <div className="mb-6">
                                 <h3 className="text-lg font-semibold">Appointments</h3>
