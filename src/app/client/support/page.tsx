@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import {
@@ -98,7 +98,7 @@ export default function ClientSupportPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Legal Support" subtitle="Client Portal" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex items-center gap-2 mb-2">
@@ -157,8 +157,8 @@ export default function ClientSupportPage() {
                                         <td className="px-4 py-4 text-gray-900">{query.question}</td>
                                         <td className="px-4 py-4">
                                             <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${query.status === 'Answered'
-                                                    ? 'bg-gray-900 text-white'
-                                                    : 'bg-gray-200 text-gray-700'
+                                                ? 'bg-gray-900 text-white'
+                                                : 'bg-gray-200 text-gray-700'
                                                 }`}>
                                                 {query.status}
                                             </span>

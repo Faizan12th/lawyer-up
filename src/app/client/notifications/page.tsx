@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import {
@@ -116,7 +116,7 @@ export default function ClientNotificationsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Notifications" subtitle="Client Portal" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex justify-between items-center">

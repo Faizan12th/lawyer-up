@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { ProfileSettings } from '@/components/client/settings/ProfileSettings';
 import { NotificationSettings } from '@/components/client/settings/NotificationSettings';
 import { SecuritySettings } from '@/components/client/settings/SecuritySettings';
@@ -19,7 +19,7 @@ export default function ClientSettingsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Settings" subtitle="Client Portal" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 {/* Tabs */}
@@ -29,8 +29,8 @@ export default function ClientSettingsPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id as any)}
                             className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all ${activeTab === tab.id
-                                    ? 'bg-white shadow-sm text-gray-900'
-                                    : 'text-gray-600 hover:bg-white/50'
+                                ? 'bg-white shadow-sm text-gray-900'
+                                : 'text-gray-600 hover:bg-white/50'
                                 }`}
                         >
                             {tab.label}

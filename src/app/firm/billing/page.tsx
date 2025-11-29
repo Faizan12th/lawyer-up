@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Download, Filter, Search } from 'lucide-react';
@@ -112,7 +112,7 @@ export default function FirmBillingPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Centralized Billing" subtitle="Legal Partners LLP" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -250,8 +250,8 @@ export default function FirmBillingPage() {
                                         <td className="px-4 py-3 text-right font-medium">{tx.amount}</td>
                                         <td className="px-4 py-3 text-right">
                                             <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${tx.status === 'Paid'
-                                                    ? 'bg-green-100 text-green-800'
-                                                    : 'bg-yellow-100 text-yellow-800'
+                                                ? 'bg-green-100 text-green-800'
+                                                : 'bg-yellow-100 text-yellow-800'
                                                 }`}>
                                                 {tx.status}
                                             </span>

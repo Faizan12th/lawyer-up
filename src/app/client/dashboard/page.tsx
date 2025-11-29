@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
@@ -19,6 +19,7 @@ import {
     Loader2
 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
+import { LawyerCard } from '@/components/client/LawyerCard';
 
 export default function ClientDashboard() {
     const [user, setUser] = useState<any>(null);
@@ -113,7 +114,7 @@ export default function ClientDashboard() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Dashboard" subtitle={`Welcome back, ${user?.name || 'Client'}`} />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 {/* Stats Grid */}
@@ -166,38 +167,7 @@ export default function ClientDashboard() {
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {recommendedLawyers.map((lawyer, index) => (
-                            <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                                <div className="flex items-start gap-4 mb-4">
-                                    <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                                        {lawyer.user?.image ? (
-                                            <img src={lawyer.user.image} alt={lawyer.user.name} className="h-full w-full object-cover" />
-                                        ) : (
-                                            <User className="h-6 w-6 text-gray-600" />
-                                        )}
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold text-sm">{lawyer.user?.name}</h4>
-                                        <p className="text-xs text-muted-foreground">{lawyer.specializations?.[0] || 'General Law'}</p>
-                                        <div className="flex items-center gap-1 mt-1">
-                                            <Star className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                                            <span className="text-xs font-medium text-yellow-600">4.9</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="space-y-2 text-xs text-muted-foreground mb-4">
-                                    <div className="flex justify-between">
-                                        <span>Experience:</span>
-                                        <span className="font-medium text-foreground">{lawyer.experience} years</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span>Fee:</span>
-                                        <span className="font-medium text-foreground">PKR {lawyer.consultationFee}/hr</span>
-                                    </div>
-                                </div>
-                                <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white text-xs h-9">
-                                    View Profile
-                                </Button>
-                            </div>
+                            <LawyerCard key={index} profile={lawyer} />
                         ))}
                         {recommendedLawyers.length === 0 && (
                             <div className="col-span-3 text-center py-8 text-muted-foreground">

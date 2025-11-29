@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Star, ThumbsUp, MessageCircle, User, Loader2 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
@@ -87,7 +87,7 @@ export default function ReviewsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Feedback & Reviews" subtitle="Welcome back, Advocate" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 {/* Stats Grid */}

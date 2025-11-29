@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Plus, Search, Eye, Edit, Loader2 } from 'lucide-react';
@@ -33,7 +33,7 @@ export default function CaseManagement() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Case Management" subtitle="Welcome back, Advocate" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex items-center justify-between">

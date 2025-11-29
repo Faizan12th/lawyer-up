@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import {
@@ -70,7 +70,7 @@ export default function ClientBillingPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Payment & Billing" subtitle="Client Portal" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex items-center gap-2 mb-2">
@@ -136,8 +136,8 @@ export default function ClientBillingPage() {
                                 key={tab}
                                 onClick={() => setActiveTab(tab.toLowerCase().replace(' ', '') as any)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeTab === tab.toLowerCase().replace(' ', '')
-                                        ? 'bg-gray-100 text-gray-900 font-semibold'
-                                        : 'text-gray-600 hover:bg-gray-50'
+                                    ? 'bg-gray-100 text-gray-900 font-semibold'
+                                    : 'text-gray-600 hover:bg-gray-50'
                                     }`}
                             >
                                 {tab}

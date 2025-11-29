@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Loader2, Upload, User } from 'lucide-react';
@@ -116,7 +116,7 @@ export default function LawyerProfile() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Profile Settings" subtitle="Manage your professional profile" />
+            {/* Topbar removed */}
 
             <div className="max-w-4xl mx-auto px-6 py-8">
                 <Card className="p-8">

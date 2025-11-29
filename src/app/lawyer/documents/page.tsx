@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import {
@@ -65,7 +65,7 @@ export default function DocumentsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Documents" subtitle="Welcome back, Advocate Ahmed Khan" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 {/* Search and Actions */}

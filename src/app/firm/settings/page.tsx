@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Topbar } from '@/components/dashboard/Topbar';
+// import { Topbar } from '@/components/dashboard/Topbar';
 import { FirmProfileSettings } from '@/components/firm/settings/FirmProfileSettings';
 import { SecuritySettings } from '@/components/firm/settings/SecuritySettings';
 import { BillingSettings } from '@/components/firm/settings/BillingSettings';
@@ -20,7 +20,7 @@ export default function FirmSettingsPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-8">
-            <Topbar title="Settings" subtitle="Legal Partners LLP" />
+            {/* Topbar removed */}
 
             <div className="px-6 py-6 space-y-6">
                 <div className="flex flex-col md:flex-row gap-6">
@@ -35,8 +35,8 @@ export default function FirmSettingsPage() {
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-md transition-colors ${isActive
-                                                ? 'bg-gray-900 text-white'
-                                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                            ? 'bg-gray-900 text-white'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                             }`}
                                     >
                                         <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-gray-500'}`} />

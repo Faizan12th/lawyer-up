@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminSidebar } from '@/components/admin/AdminSidebar';
-import { AdminHeader } from '@/components/admin/AdminHeader';
+// import { AdminHeader } from '@/components/admin/AdminHeader';
 import { MobileSidebar } from '@/components/ui/MobileSidebar';
 
 export default function AdminLayout({
@@ -23,7 +23,7 @@ export default function AdminLayout({
             </div>
 
             <div className="flex flex-1 flex-col overflow-hidden">
-                <AdminHeader />
+                {/* AdminHeader removed as per user request */}
                 <main className="flex-1 overflow-y-auto p-4 md:p-8">
                     {children}
                 </main>
