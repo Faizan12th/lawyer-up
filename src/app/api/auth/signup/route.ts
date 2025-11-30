@@ -37,11 +37,23 @@ export async function POST(request: NextRequest) {
 
         const savedUser = await newUser.save();
 
-        // Create token
-        const token = signToken({ userId: savedUser._id.toString(), role: savedUser.role });
+        // Generate verification token
+        const crypto = require('crypto');
+        const verificationToken = crypto.randomBytes(32).toString('hex');
+        const VerificationToken = require('@/models/VerificationToken').default;
+        const { sendVerificationEmail } = require('@/lib/mail');
 
-        const response = NextResponse.json({
-            message: 'User created successfully',
+        await new VerificationToken({
+            userId: savedUser._id,
+            token: verificationToken,
+            expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours
+        }).save();
+
+        // Send verification email
+        await sendVerificationEmail(savedUser.email, verificationToken);
+
+        return NextResponse.json({
+            message: 'User created successfully. Please verify your email.',
             success: true,
             user: {
                 id: savedUser._id,
@@ -51,13 +63,6 @@ export async function POST(request: NextRequest) {
                 status: savedUser.status,
             },
         });
-
-        response.cookies.set('token', token, {
-            httpOnly: true,
-            path: '/',
-        });
-
-        return response;
     } catch (error: any) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }

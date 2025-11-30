@@ -8,6 +8,7 @@ export interface IUser extends Document {
     status: 'pending' | 'active' | 'suspended' | 'rejected';
     image?: string;
     lawFirm?: mongoose.Types.ObjectId;
+    isEmailVerified: boolean;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -42,6 +43,10 @@ const UserSchema: Schema<IUser> = new Schema(
             enum: ['pending', 'active', 'suspended', 'rejected'],
             default: 'active', // Clients are active by default, Lawyers/Firms might be pending
         },
+        isEmailVerified: {
+            type: Boolean,
+            default: false,
+        },
         image: {
             type: String,
         },
@@ -54,6 +59,11 @@ const UserSchema: Schema<IUser> = new Schema(
 );
 
 // Prevent recompilation of model in development
+if (process.env.NODE_ENV === 'development') {
+    if (mongoose.models.User) {
+        delete mongoose.models.User;
+    }
+}
 const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
 
 export default User;

@@ -54,8 +54,8 @@ export function FirmRegistrationForm() {
             const data = await res.json();
 
             if (res.ok) {
-                toast.success('Registration successful! Please login.');
-                router.push('/login');
+                toast.success('Registration successful! Please verify your email.');
+                router.push('/verify-email');
             } else {
                 toast.error(data.error || 'Registration failed');
             }

@@ -120,8 +120,8 @@ export const LawyerRegistrationForm: React.FC = () => {
                 }),
             });
 
-            // Redirect to dashboard (which will show "Verification in Progress")
-            router.push('/lawyer/dashboard');
+            // Redirect to verify email page
+            router.push('/verify-email');
 
         } catch (err: any) {
             setError(err.message);

@@ -83,7 +83,7 @@ export default function AdminDashboardPage() {
             {/* Charts Section */}
             <div className="grid gap-6 lg:grid-cols-2">
                 <RegistrationsChart data={stats?.registrations} />
-                <ActiveUsersChart active={stats?.activity?.active} total={stats?.activity?.total} />
+                <ActiveUsersChart active={stats?.activity?.active} total={stats?.activity?.total} trend={stats?.activity?.trend} />
             </div>
 
             <div className="grid gap-6">
@@ -91,7 +91,8 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Recent Activity */}
-            <ActivityTable />
+            {/* Recent Activity */}
+            <ActivityTable activities={stats?.recentActivities} />
         </div>
     );
 }

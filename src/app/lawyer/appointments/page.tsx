@@ -18,6 +18,7 @@ import {
     Loader2
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 export default function AppointmentsPage() {
     const [activeTab, setActiveTab] = useState<'pending' | 'scheduled' | 'history'>('pending');
@@ -45,6 +46,29 @@ export default function AppointmentsPage() {
     useEffect(() => {
         fetchAppointments();
     }, []);
+
+    const router = useRouter();
+
+    const handleChat = async (clientId: string) => {
+        try {
+            const res = await fetch('/api/chats', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ recipientId: clientId }),
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                // Redirect to chat page with the chat ID
+                router.push(`/lawyer/chat?id=${data.data._id}`);
+            } else {
+                toast.error(data.error || 'Failed to start chat');
+            }
+        } catch (error) {
+            console.error('Error starting chat:', error);
+            toast.error('Failed to start chat');
+        }
+    };
 
     const handleStatusUpdate = async (id: string, status: string) => {
         try {
@@ -210,7 +234,11 @@ export default function AppointmentsPage() {
                                                 <Button className="flex-1 md:flex-none bg-gray-900 hover:bg-gray-800 text-white gap-2">
                                                     <Video className="h-4 w-4" /> Join
                                                 </Button>
-                                                <Button variant="outline" className="flex-1 md:flex-none gap-2">
+                                                <Button
+                                                    variant="outline"
+                                                    className="flex-1 md:flex-none gap-2"
+                                                    onClick={() => handleChat(apt.client._id)}
+                                                >
                                                     <MessageSquare className="h-4 w-4" /> Chat
                                                 </Button>
                                             </div>

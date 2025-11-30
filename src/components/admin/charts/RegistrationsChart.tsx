@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 
-export function RegistrationsChart({ data }: { data?: any }) {
+export function RegistrationsChart({ data }: { data?: any[] }) {
     // Default data if none provided
     const defaultData = [
         { month: 'Apr', clients: 0, firms: 0, lawyers: 0 },
@@ -12,20 +12,15 @@ export function RegistrationsChart({ data }: { data?: any }) {
         { month: 'Jul', clients: 0, firms: 0, lawyers: 0 },
         { month: 'Aug', clients: 0, firms: 0, lawyers: 0 },
         { month: 'Sep', clients: 0, firms: 0, lawyers: 0 },
-        { month: 'Oct', clients: 0, firms: 0, lawyers: 0 },
     ];
 
-    // If data is provided (object with date keys), process it
-    // For now, we'll just use the default data or a simple mapping if needed.
-    // Since the API returns registrations by date, we'd need to aggregate by month here.
-    // For simplicity in this iteration, we'll stick to default data or basic prop usage.
-    // Real implementation would require date parsing.
+    const chartData = data && data.length > 0 ? data : defaultData;
 
-    const chartData = defaultData;
-    // TODO: Implement proper date aggregation from props
-
-
-    const maxVal = 600;
+    // Calculate max value dynamically or use default
+    const maxVal = Math.max(
+        ...chartData.map((d: any) => Math.max(d.clients, d.firms, d.lawyers)),
+        10 // Minimum max value to avoid division by zero
+    ) * 1.2; // Add 20% buffer
 
     return (
         <Card className="p-6 bg-white border-none shadow-sm">

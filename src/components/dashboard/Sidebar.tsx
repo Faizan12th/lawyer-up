@@ -13,7 +13,8 @@ import {
     Star,
     Settings,
     LogOut,
-    Scale
+    Scale,
+    MessageSquare
 } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
@@ -25,6 +26,7 @@ export const Sidebar: React.FC = () => {
         { icon: Bot, label: 'AI Legal Assistant', href: '/lawyer/ai-assistant' },
         { icon: Calendar, label: 'Appointments', href: '/lawyer/appointments' },
         { icon: FileText, label: 'Documents', href: '/lawyer/documents' },
+        { icon: MessageSquare, label: 'Messages', href: '/lawyer/chat' },
         { icon: Bell, label: 'Notifications', href: '/lawyer/notifications' },
         { icon: Star, label: 'Feedback & Reviews', href: '/lawyer/reviews' },
         { icon: Settings, label: 'Settings', href: '/lawyer/settings' },

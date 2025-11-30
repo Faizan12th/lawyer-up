@@ -3,22 +3,22 @@
 import React from 'react';
 import { Card } from '@/components/ui/Card';
 
-export function ActiveUsersChart({ active, total }: { active?: number, total?: number }) {
-    // Mock trend data based on current active count
-    const currentActive = active || 0;
-    const currentTotal = total || 0;
-
-    const data = [
-        { month: 'Apr', clients: 1800, lawyers: 400 },
-        { month: 'May', clients: 2000, lawyers: 450 },
-        { month: 'Jun', clients: 2300, lawyers: 500 },
-        { month: 'Jul', clients: 2600, lawyers: 550 },
-        { month: 'Aug', clients: 3000, lawyers: 650 },
-        { month: 'Sep', clients: 3500, lawyers: 750 },
-        { month: 'Oct', clients: Math.floor(currentActive * 0.8), lawyers: Math.floor(currentActive * 0.2) },
+export function ActiveUsersChart({ active, total, trend }: { active?: number, total?: number, trend?: any[] }) {
+    const defaultTrend = [
+        { month: 'Apr', clients: 0, lawyers: 0 },
+        { month: 'May', clients: 0, lawyers: 0 },
+        { month: 'Jun', clients: 0, lawyers: 0 },
+        { month: 'Jul', clients: 0, lawyers: 0 },
+        { month: 'Aug', clients: 0, lawyers: 0 },
+        { month: 'Sep', clients: 0, lawyers: 0 },
     ];
 
-    const maxVal = 6000;
+    const data = trend && trend.length > 0 ? trend : defaultTrend;
+
+    const maxVal = Math.max(
+        ...data.map((d: any) => Math.max(d.clients, d.lawyers)),
+        10
+    ) * 1.2;
     const width = 100; // percent
     const height = 100; // percent
 

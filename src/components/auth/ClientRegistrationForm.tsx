@@ -57,8 +57,8 @@ export function ClientRegistrationForm() {
                 throw new Error(data.error || 'Registration failed');
             }
 
-            // Redirect to dashboard
-            router.push('/client/dashboard');
+            // Redirect to verify email page
+            router.push('/verify-email');
         } catch (err: any) {
             setError(err.message);
         } finally {
